@@ -10,6 +10,8 @@ const LeftNav = () => {
       .then((data) => setCategories(data))
       .catch((error) => console.error(error));
   }, []);
+
+  
   return (
     <div className="border p-3 rounded">
       <h3>All Category</h3>
