@@ -2,7 +2,7 @@ import React from "react";
 import { Button, ListGroup } from "react-bootstrap";
 import { FaFacebook, FaGithub, FaGoogle, FaTwitter, FaInstagram } from 'react-icons/fa';
 import Qzon from "../Q-zone/Qzon";
-import bgImg from '../../assets/bg.png'
+import bgImg from '../../../../assets/bg.png'
 
 const RIghtNav = () => {
   return (

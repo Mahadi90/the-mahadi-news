@@ -11,16 +11,14 @@ const LeftNav = () => {
       .catch((error) => console.error(error));
   }, []);
   return (
-    <div className="border p-3">
+    <div className="border p-3 rounded">
       <h3>All Category</h3>
       <div className="ms-4">
-        {
-            categories.map(category => <p
-            key={category.id}
-            >
-     <Link className="text-decoration-none">{category.name}</Link>
-            </p>)
-        }
+        {categories.map((category) => (
+          <p key={category.id}>
+            <Link to={`/category/${category.id}`} className="text-decoration-none ">{category.name}</Link>
+          </p>
+        ))}
       </div>
     </div>
   );
