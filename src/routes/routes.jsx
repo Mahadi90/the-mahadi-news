@@ -4,6 +4,8 @@ import NewsLayout from "../layout/NewsLayout";
 import Category from "../pages/Home/Category/Category";
 import Home from "../pages/Home/Home/Home";
 import NewsDetails from "../pages/Home/NewsDetails";
+import Login from "../LoginLayout/Login";
+import Register from "../LoginLayout/Register";
 
 const router = createBrowserRouter([
     {
@@ -32,6 +34,12 @@ const router = createBrowserRouter([
                 loader: ({params}) => fetch(`http://localhost:5000/news/${params.id}`)
             }
         ]
+   },{
+    path: 'login',
+    element: <Login></Login>
+   },{
+    path: 'register',
+    element: <Register></Register>
    }
 ])
 
