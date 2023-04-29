@@ -1,13 +1,35 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import NavigationBAr from '../pages/NavigationBAr';
+import { AuthContext } from '../providers/AuthProvider';
 
 const Login = () => {
+
+   const { signIn } = useContext(AuthContext)
+
+   const handleSignIn = e => {
+        e.preventDefault()
+
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    console.log(email, password)
+    signIn(email, password)
+    .then(result => {
+        const loggedUser = result.user;
+        console.log(loggedUser)
+    })
+    .catch(error => {
+        console.log(error)
+    })
+   }
+
     return (
-        <div className='bg-dark pb-5'>
+        <div className='bg-info pb-5'>
             <NavigationBAr></NavigationBAr>
-            <Form className='w-50 mx-auto bg-white my-3 px-5 py-3 rounded'>
+            <Form onSubmit={handleSignIn} className='w-50 mx-auto bg-white my-3 px-5 py-3 rounded'>
                 <h2 className='text-center my-2'>Login your account</h2>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>

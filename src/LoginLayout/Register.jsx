@@ -1,13 +1,37 @@
-import React from 'react';
+import React, {useContext } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import NavigationBAr from '../pages/NavigationBAr';
+import { AuthContext } from '../providers/AuthProvider';
 
 const Register = () => {
+
+    const { createUser } = useContext(AuthContext)
+
+    const handleRegister = e =>{
+        e.preventDefault()
+
+        const form = e.target;
+        const name = form.name.value;
+        const photo = form.photo.value;
+        const email = form.email.value;
+        const password = form.password.value;
+
+        console.log(name, photo, email, password)
+
+        createUser(email, password)
+        .then(result => {
+            const loggededUser = result.user;
+            console.log(loggededUser)
+        })
+        .catch(error => {
+            console.log(error)
+        })
+}
     return (
-        <div className='bg-dark pb-5'>
+        <div className='bg-info pb-5'>
             <NavigationBAr></NavigationBAr>
-            <Form className='w-50 mx-auto bg-white my-3 px-5 py-3 rounded'>
+            <Form onSubmit={handleRegister} className='w-50 mx-auto bg-white my-3 px-5 py-3 rounded'>
                 <h2 className='text-center my-2'>Register your account</h2>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Name</Form.Label>
