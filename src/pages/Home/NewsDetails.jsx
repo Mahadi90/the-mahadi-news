@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Card } from 'react-bootstrap';
 import { FaAngleLeft } from 'react-icons/fa';
-import { Link, useLoaderData, useParams } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import EditorInsight from '../EditorInsight';
 
 const NewsDetails = () => {
