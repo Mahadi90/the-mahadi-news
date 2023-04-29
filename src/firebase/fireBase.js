@@ -4,13 +4,15 @@ import { initializeApp } from "firebase/app";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+
+console.log('environment variable', import.meta.env.VITE_PASS)
 const firebaseConfig = {
-  apiKey: "AIzaSyCTRI-NzB1JAtoyn2LvjUxnHBMOhhroq8g",
-  authDomain: "the-mahadi-news.firebaseapp.com",
-  projectId: "the-mahadi-news",
-  storageBucket: "the-mahadi-news.appspot.com",
-  messagingSenderId: "786148663775",
-  appId: "1:786148663775:web:1dcf90dfeaa4c88f64e46a"
+  apiKey: import.meta.env.VITE_apiKey,
+  authDomain: import.meta.env.VITE_authDomain,
+  projectId: import.meta.env.VITE_projectId,
+  storageBucket: import.meta.env.VITE_storageBucket,
+  messagingSenderId: import.meta.env.VITE_messagingSenderId,
+  appId: import.meta.env.VITE_appId
 };
 
 // Initialize Firebase

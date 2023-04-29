@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { ProgressBar, Spinner } from 'react-bootstrap';
+import {  Spinner } from 'react-bootstrap';
 import { Navigate, useLocation } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProvider';
 

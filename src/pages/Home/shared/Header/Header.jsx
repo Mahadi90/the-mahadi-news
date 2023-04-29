@@ -13,11 +13,11 @@ const Header = () => {
     <Container>
       {/* top navbar */}
       <div className="text-center">
-        <img className="w-50 mt-4 rounded" src={logo} alt="" />
+        <img className="w-50 mt-2 rounded" src={logo} alt="" />
         <p className="text-secondary ">Journalism Without Fear or Favour</p>
         <p className="fw-bold">{moment().format("dddd, MMMM D, YYYY")}</p>
       </div>
-      <div className="d-flex my-3 p-3 bg-secondary">
+      <div className="d-flex my-2 p-3 bg-secondary">
         <Button variant="danger">Latest</Button>
         <Marquee className="text-danger bg-white rounded" speed={50}>
           Shahin Notir Pola k Dhore Fel. Match Highlights: Germany vs Spain — as
